@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+     <meta charset="UTF-8">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <title>template</title>
+
+  <link href="css/metro.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/metro.min.js"></script>
+
+<script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <style type="text/css">
+        .grid td {
+            width: 300px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+ <script>
+        function showDialog(id){
+            var dialog = $(id).data('dialog');
+            dialog.open();
+        }
+    </script>
+
+<a onclick="showDialog('#dialog3')">Show Dialog with dark overlay</a>
+<div class="dialog padding20" data-role="dialog" id="dialog3" data-overlay="true" data-overlay-color="bg-dark" data-close-button="true">
+<div id="settingDiv">
+
+</div>
+</div>
+
+     <script id="AppPoolSettingTemplate" type="text/x-jquery-templ">
+
+<div class="grid" >
+        <div class="row cells2">
+            <div class="cell colspan1">
+                <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">(常规)
+                        </div>
+                        <div class="content">
+                            <table class="" id="main_table_demo">
+                                <tr>
+                                    <td>.NET Framework版本</td>
+                                    <td><b>${Name}</b>(${ReleaseYear})</td>
+                                </tr>
+                                <tr>
+                                    <td>队列长度</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>名称</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>启用32位应用程序</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>托管管道模式</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>自动启动</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <!--CPU-->
+                    <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">CPU</div>
+                        <div class="content">
+                            <table class="" id="main_table_demo">
+                                <tr>
+                                    <td>处理器关联掩码</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>限制</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>限制操作</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>限制间隔（分钟）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>已启动处理器关联</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">回收</div>
+                        <div class="content">
+                            <table>
+                                <tr>
+                                    <td>发生配置更改时禁止回收</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>固定时间间隔（分钟）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>禁用重叠回收</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>请求限制</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <!---end of 回收-->
+                    <!---end of 生成回收事件日志条目-->
+                     <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">生成回收事件日志条目</div>
+                        <div class="content">
+                            <table>
+                                <tr>
+                                    <td>ISAPI报告了非正常状态</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>超出请求限制</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>超出虚拟内存限制</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>固定时间间隔</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>手动回收</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>特定时间</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>已超出专用内存限制</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>应用程序池配置已更改</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end of cpu-->
+                </div>
+            </div>
+            <div class="cell colspan1">
+            <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">特定时间
+                        </div>
+                        <div class="content">
+                            <table class="" id="main_table_demo">
+                                <tr>
+                                    <td>超出虚拟内存限制（KB）</td>
+                                    <td><b>${Name}</b>(${ReleaseYear})</td>
+                                </tr>
+                                <tr>
+                                    <td>专用内存设置（KB）</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">进程孤立</div>
+                        <div class="content">
+                            <table class="">
+                                <tr>
+                                    <td>可执行文件</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>可执行文件参数</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>已启用</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">进程模型</div>
+                        <div class="content">
+                            <table>
+                                <tr>
+                                    <td>Ping间隔（秒）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>Ping最大响应时间（秒）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>标识</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>关闭时间限制（秒）</td>
+                                    <td>b</td>
+                                </tr>
+                                 <tr>
+                                    <td>加载用户配置文件</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>启动时间限制（秒）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>启动Ping</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>闲置超时（秒）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>最大工作进程数</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                    <!---end of 回收-->
+                    <!---end of 生成回收事件日志条目-->
+                     <div class="accordion" data-role="accordion" data-close-any="true">
+                    <div class="frame active">
+                        <div class="heading">快速故障防护</div>
+                        <div class="content">
+                            <table>
+                                <tr>
+                                    <td>"服务不可用"响应类型</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>故障间隔（分钟）</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>关闭可执行文件</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>关闭可执行文件参数</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>已启用</td>
+                                    <td>b</td>
+                                </tr>
+                                <tr>
+                                    <td>最大故障数</td>
+                                    <td>b</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end of cpu-->
+                </div>
+            </div>
+        </div>
+        </div>
+</script>
+<script >
+
+var moives=[{Name:"The Red Violin",ReleaseYear:"1998"}];
+
+
+
+$("#AppPoolSettingTemplate").tmpl(moives).appendTo("#settingDiv");
+
+
+</script>
+</body>
+</html>
